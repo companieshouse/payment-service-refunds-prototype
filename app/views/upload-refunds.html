@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Payment service refunds - Companies House Internal Service
+  GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
-        },
+        }
         items: [
           {
             value: "worldpay",
@@ -30,16 +30,6 @@
             text: "PayPal"
           }
         ]
-      }) }}
-      {{ govukFileUpload({
-        id: "upload-refunds",
-        name: "upload-refunds",
-        label: {
-          text: "Upload a file"
-        }
-      }) }}
-      {{ govukButton({
-        text: "Upload and submit"
       }) }}
     </div>
   </div>
