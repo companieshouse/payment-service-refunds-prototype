@@ -1,0 +1,55 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Payment service refunds - Companies House Internal Service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    {{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "The file could not be uploaded to WorldPay. Try again or contact EMAIL. "
+    }
+  ]
+}) }}
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "payment-provider",
+        name: "payment-provider",
+        fieldset: {
+          legend: {
+            text: "Which payment provider are you uploading a refund for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "worldpay",
+            text: "Worldpay"
+          },
+          {
+            value: "paypal",
+            text: "PayPal"
+          }
+        ]
+      }) }}
+      {{ govukFileUpload({
+        id: "upload-refunds",
+        name: "upload-refunds",
+        label: {
+          text: "Upload a file"
+        }
+      }) }}
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

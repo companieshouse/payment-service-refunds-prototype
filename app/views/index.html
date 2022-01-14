@@ -9,38 +9,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "payment-provider",
-        name: "payment-provider",
-        fieldset: {
-          legend: {
-            text: "Which payment provider are you uploading a refund for?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "worldpay",
-            text: "Worldpay"
-          },
-          {
-            value: "paypal",
-            text: "PayPal"
-          }
-        ]
-      }) }}
-      {{ govukFileUpload({
-        id: "upload-refunds",
-        name: "upload-refunds",
-        label: {
-          text: "Upload a file"
-        }
-      }) }}
-      {{ govukButton({
-        text: "Submit"
-      }) }}
+      <h1 class="govuk-heading-xl">Payment service refunds</h1>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="no-error">No error</a></li>
+  <li><a href="page-not-found">Page not found</a></li>
+  <li><a href="worldpay-failed">Worldpay failed</a></li>
+  <li><a href="validate-refund-error">Validate refund error</a></li>
+  </ul>
     </div>
   </div>
 
