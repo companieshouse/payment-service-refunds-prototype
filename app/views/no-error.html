@@ -5,32 +5,26 @@
   Payment service refunds - Companies House Internal Service
 {% endblock %}
 
+{% block beforeContent %} 
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+{{ govukBackLink({
+  text: "Back",
+  href: "overview"
+}) }}
+</div>
+        <div class="govuk-grid-column-one-half">
+    <p class="govuk-body-s govuk-!-text-align-right govuk-!-margin-top-3"><a href="#" class="govuk-link">Sign out</a></p>
+    </div>
+    </div>
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "payment-provider",
-        name: "payment-provider",
-        fieldset: {
-          legend: {
-            text: "Which payment provider are you uploading a refund for?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "worldpay",
-            text: "Worldpay"
-          },
-          {
-            value: "paypal",
-            text: "PayPal"
-          }
-        ]
-      }) }}
+    <h1 class="govuk-heading-l">Upload file refund for GOV.UK Pay</h1>
+
       {{ govukFileUpload({
         id: "upload-refunds",
         name: "upload-refunds",
