@@ -34,48 +34,16 @@
 <h1 class="govuk-heading-xl">{{serviceName}}</h1>
 {{ govukButton({
   text: "Upload refund file",
-  href: "no-error"
+  href: "no-error",
+  classes: "govuk-!-margin-bottom-8"
 }) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-{{ govukTable({
-  caption: "Failed refunds",
-  captionClasses: "govuk-table__caption--l",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Date"
-    },
-    {
-      text: "Action"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "10 September 2021"
-      },
-      {
-        html: "<a href='#' class='govuk-link'>Try again</a>"
-      }
-    ],
-    [
-      {
-        text: "21 April 2021"
-      },
-      {
-        html: "<a href='#' class='govuk-link'>Try again</a>"
-      }
-    ],
-    [
-      {
-        text: "10 December 2020"
-      },
-      {
-        html: "<a href='#' class='govuk-link'>Try again</a>"
-      }
-    ]
-  ]
+<h2 class="govuk-heading-m">Failed refunds</h1>
+<p class="govuk-body">There X failed refunds.</p>
+{{ govukButton({
+  text: "Retry refunds",
+  classes: "govuk-button--secondary"
 }) }}
     </div>
   </div>
