@@ -21,6 +21,7 @@
 {% endblock %}
 
 {% block content %}
+   {% if upload == 'succesful' %}
 {% set html %}
   <h3 class="govuk-notification-banner__heading">
     Payment file uploaded successfully
@@ -31,6 +32,7 @@
   html: html,
   type: 'success'
 }) }}
+{% endif %}
 <h1 class="govuk-heading-xl">{{serviceName}}</h1>
 {{ govukButton({
   text: "Upload refund file",
