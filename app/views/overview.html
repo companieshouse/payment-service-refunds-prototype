@@ -1,53 +1,46 @@
-
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Payment service refunds - Companies House Internal Service
 {% endblock %}
-
 {% block beforeContent %} 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-        
-{{ govukBackLink({
-  text: "Back",
-  href: "#"
-}) }}
-</div>
-        <div class="govuk-grid-column-one-half">
-    <p class="govuk-body-s govuk-!-text-align-right govuk-!-margin-top-3"><a href="#" class="govuk-link">Sign out</a></p>
-    </div>
-    </div>
-{% endblock %}
-
-{% block content %}
-   {% if upload == 'succesful' %}
-{% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Payment file uploaded successfully
-  </h3>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
-{% endif %}
-<h1 class="govuk-heading-xl">{{serviceName}}</h1>
-{{ govukButton({
-  text: "Upload refund file",
-  href: "no-error",
-  classes: "govuk-!-margin-bottom-8"
-}) }}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-<h2 class="govuk-heading-m">Failed refunds</h1>
-<p class="govuk-body">There 10 failed refunds.</p>
-{{ govukButton({
-  text: "Retry refunds",
-  classes: "govuk-button--secondary"
-}) }}
+    <div class="govuk-grid-column-one-half">  
+      {{ govukBackLink({
+        text: "Back",
+        href: "#"
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <p class="govuk-body-s govuk-!-text-align-right govuk-!-margin-top-3"><a href="#" class="govuk-link">Sign out</a></p>
     </div>
   </div>
-
+{% endblock %}
+{% block content %}
+   {% if upload == 'succesful' %}
+      {% set html %}
+        <h3 class="govuk-notification-banner__heading">
+          Payment file uploaded successfully
+        </h3>
+      {% endset %}
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+    {% endif %}
+    <h1 class="govuk-heading-xl">{{serviceName}}</h1>
+    {{ govukButton({
+      text: "Upload refund file",
+      href: "no-error",
+      classes: "govuk-!-margin-bottom-8"
+    }) }}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Failed refunds</h1>
+        <p class="govuk-body">There 10 failed refunds.</p>
+        {{ govukButton({
+          text: "Retry refunds",
+          classes: "govuk-button--secondary"
+        }) }}
+    </div>
+  </div>
 {% endblock %}

@@ -1,44 +1,36 @@
-
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Payment service refunds - Companies House Internal Service
 {% endblock %}
-
 {% block beforeContent %} 
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-{{ govukBackLink({
-  text: "Back",
-  href: "overview"
-}) }}
-</div>
-        <div class="govuk-grid-column-one-half">
-    <p class="govuk-body-s govuk-!-text-align-right govuk-!-margin-top-3"><a href="#" class="govuk-link">Sign out</a></p>
-    </div>
+      <div class="govuk-grid-column-one-half">
+        {{ govukBackLink({
+          text: "Back",
+          href: "overview"
+        }) }}
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body-s govuk-!-text-align-right govuk-!-margin-top-3"><a href="#" class="govuk-link">Sign out</a></p>
+      </div>
     </div>
 {% endblock %}
-
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-          <form action="/no-error" method="post">
-
-    <h1 class="govuk-heading-l">Upload file refund for GOV.UK Pay</h1>
-
-      {{ govukFileUpload({
-        id: "upload-refunds",
-        name: "upload-refunds",
-        label: {
-          text: "Upload a file"
-        }
-      }) }}
-      {{ govukButton({
-        text: "Submit"
-      }) }}
+      <form action="/no-error" method="post">
+        <h1 class="govuk-heading-l">Upload file refund for GOV.UK Pay</h1>
+        {{ govukFileUpload({
+          id: "upload-refunds",
+          name: "upload-refunds",
+          label: {
+            text: "Upload a file"
+          }
+        }) }}
+        {{ govukButton({
+          text: "Submit"
+        }) }}
       </form>
     </div>
   </div>
-
 {% endblock %}

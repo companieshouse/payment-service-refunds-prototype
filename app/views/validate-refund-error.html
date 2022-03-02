@@ -1,47 +1,38 @@
-
 {% extends "layout.html" %}
-
 {% block pageTitle %}
   Payment service refunds - Companies House Internal Service
 {% endblock %}
-
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-  <h2 class="govuk-error-summary__title" id="error-summary-title">
-    There is a problem
-  </h2>
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        Correct the following data fields and then upload the file again:
-        <ul class="govuk-list govuk-list--bullet">
-        <li>Reason 1</li>
-        <li>Reason 2</li>
-        <li>Reason 3</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">There is a problem</h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+            Correct the following data fields and then upload the file again:
+            <ul class="govuk-list govuk-list--bullet">
+            <li>Reason 1</li>
+            <li>Reason 2</li>
+            <li>Reason 3</li>
+            </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
       <form action="/no-error" method="post">
-
-    <h1 class="govuk-heading-l">Upload file refund for GOV.UK Pay</h1>
-
-      {{ govukFileUpload({
-        id: "upload-refunds",
-        name: "upload-refunds",
-        label: {
-          text: "Upload a file"
-        }
-      }) }}
-      {{ govukButton({
-        text: "Submit"
-      }) }}
+        <h1 class="govuk-heading-l">Upload file refund for GOV.UK Pay</h1>
+        {{ govukFileUpload({
+          id: "upload-refunds",
+          name: "upload-refunds",
+          label: {
+            text: "Upload a file"
+          }
+        }) }}
+        {{ govukButton({
+          text: "Submit"
+        }) }}
       </form>
     </div>
   </div>
-
 {% endblock %}
